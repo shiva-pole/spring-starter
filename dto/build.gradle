@@ -1,0 +1,5 @@
+description = 'Data Transfer Objects'
+
+dependencies {
+	compile "javax.validation:validation-api"
+}

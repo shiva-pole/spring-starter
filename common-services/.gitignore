@@ -1,0 +1,16 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+#gradle
+build/
+bin/
+.gradle
+gradle
+gradlew
+gradlew.bat
+*.class
+
+#logs
+logs/

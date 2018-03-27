@@ -1,0 +1,8 @@
+description = 'Investor Property Services'
+
+dependencies {
+	compile project(":config")
+	compile project(":common-services")
+	
+	testCompile project(path: ':common-services', configuration: 'testOutput')
+}

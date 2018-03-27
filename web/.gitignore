@@ -1,0 +1,23 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+#gradle
+build/
+bin/
+.gradle
+gradle
+gradlew
+gradlew.bat
+*.class
+
+#logs
+logs/
+
+.sass-cache/*
+
+src/main/webapp/app/ng2app/*.js
+src/main/webapp/app/ng2app/*/*.js
+src/main/webapp/app/ng2app/*/*/*.js
+src/main/webapp/app/ng2app/*/*/*/*.js

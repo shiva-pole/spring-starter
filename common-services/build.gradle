@@ -1,0 +1,11 @@
+description = 'Common Services'
+
+configurations {
+    testOutput
+}
+
+dependencies {
+	compile project(":config")
+	
+	testOutput sourceSets.test.output
+}

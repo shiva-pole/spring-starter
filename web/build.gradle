@@ -1,0 +1,40 @@
+description = 'Investor Web'
+
+ext {
+	appVersion = (System.getProperty("AppVersion") == null) ? "noversion" : System.getProperty("AppVersion")
+}
+
+apply plugin: 'spring-boot'
+apply plugin: 'war'
+
+configurations {
+	all*.exclude group: '', module: 'servlet-api'
+}
+configurations.all { resolutionStrategy.force 'rubygems:rb-inotify:0.9.5' }
+
+
+dependencies {
+	providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
+
+	compile project(":dto")
+	compile project(":config")
+	compile project(":common-services")
+	compile project(":user-services")
+	
+	testCompile project(path: ':common-services', configuration: 'testOutput')
+}
+
+springBoot {
+    mainClass = 'com.analytics.scatterfit.web.Application'
+}
+
+war {
+    archiveName ="scatterfit.war"
+}
+
+processResources {
+    from('src/main/resources') {
+        include '*.properties'
+        filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: [AppVersion : appVersion])		
+    }
+}
