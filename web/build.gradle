@@ -1,4 +1,4 @@
-description = 'Investor Web'
+description = 'Scatterfit Web'
 
 ext {
 	appVersion = (System.getProperty("AppVersion") == null) ? "noversion" : System.getProperty("AppVersion")
@@ -10,8 +10,6 @@ apply plugin: 'war'
 configurations {
 	all*.exclude group: '', module: 'servlet-api'
 }
-configurations.all { resolutionStrategy.force 'rubygems:rb-inotify:0.9.5' }
-
 
 dependencies {
 	providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
@@ -26,6 +24,10 @@ dependencies {
 
 springBoot {
     mainClass = 'com.analytics.scatterfit.web.Application'
+}
+
+bootRepackage {
+    enabled = false
 }
 
 war {

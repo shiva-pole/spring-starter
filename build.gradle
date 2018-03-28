@@ -12,6 +12,7 @@ buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
         classpath "com.github.jruby-gradle:jruby-gradle-plugin:0.1.12"
+        classpath 'io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE'
     }
 }
 

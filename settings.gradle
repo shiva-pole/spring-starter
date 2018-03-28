@@ -1,2 +1,2 @@
 rootProject.name = 'scatterfit'
-include "config", "dto", ""common-services", "user-services", "web" 
+include "config", "dto", "common-services", "user-services", "web"
